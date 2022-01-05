@@ -37,6 +37,4 @@ export default class ClientRepositoryMongo implements ClientRepository {
           );
           return ClientMapper.toDomain(clientUpdated);
     }
-
-  
 }

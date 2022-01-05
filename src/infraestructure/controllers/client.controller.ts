@@ -19,9 +19,9 @@ export default class ClientController {
     @Post()
     public async createClient(
       @Res() request,
-      @Body() product: ClientCommand,
+      @Body() client: ClientCommand,
     ): Promise<any> {
-      const clientCreated = await this.createClientUseCase.handler(product);
+      const clientCreated = await this.createClientUseCase.handler(client);
       return request.status(HttpStatus.CREATED).json(clientCreated);
     }
 }
