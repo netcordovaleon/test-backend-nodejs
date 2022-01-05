@@ -5,13 +5,13 @@ export default class InvoiceEntity extends Document {
     id?: string;
     vendorId: number;
     invoiceNumber: string;
-    invoiceDate: string;
+    invoiceDate: Date;
     invoiceTotal: number;
     paymentTotal: number;
     creditTotal: number;
     bankId: number;
-    invoiceDueDate: string;
-    paymentDate: string;
+    invoiceDueDate: Date;
+    paymentDate: Date;
     currency: string;
 
 }

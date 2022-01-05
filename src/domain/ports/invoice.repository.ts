@@ -6,6 +6,8 @@ export interface InvoiceRepository {
 
   getInvoice(invoiceId: string): Promise<Optional<Invoice>>;
 
+  getFilterInvoices(vendor: string, dateIni: string, dateFin: string): Promise<Invoice[]>;
+
   createInvoice(client: Invoice): Promise<Optional<Invoice>>;
 
   deleteInvoice(clientId: string): Promise<Optional<Invoice>>;

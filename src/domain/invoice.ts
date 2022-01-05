@@ -1,28 +1,28 @@
 export default class Invoice {
   
     public id?: string;
-    public vendorId: number;
-    public invoiceNumber: string;
-    public invoiceDate: string;
-    public invoiceTotal: number;
-    public paymentTotal: number;
-    public creditTotal: number;
-    public bankId: number;
-    public invoiceDueDate: string;
-    public paymentDate: string;
-    public currency: string;
+    public vendorId?: number;
+    public invoiceNumber?: string;
+    public invoiceDate?: Date;
+    public invoiceTotal?: number;
+    public paymentTotal?: number;
+    public creditTotal?: number;
+    public bankId?: number;
+    public invoiceDueDate?: Date;
+    public paymentDate?: Date;
+    public currency?: string;
 
     constructor(
       id: string,
       vendorId: number,
       invoiceNumber: string,
-      invoiceDate: string,
+      invoiceDate: Date,
       invoiceTotal: number,
       paymentTotal: number,
       creditTotal: number,
       bankId: number,
-      invoiceDueDate: string,
-      paymentDate: string,
+      invoiceDueDate: Date,
+      paymentDate: Date,
       currency: string
 
     ) {

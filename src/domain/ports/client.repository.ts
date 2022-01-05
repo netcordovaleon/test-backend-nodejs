@@ -14,4 +14,6 @@ export interface ClientRepository {
     clientId: string,
     client: Client,
   ): Promise<Optional<Client>>;
+
+  partialUpdateClient(clientId: string, client: Client): Promise<Optional<Client>>
 }

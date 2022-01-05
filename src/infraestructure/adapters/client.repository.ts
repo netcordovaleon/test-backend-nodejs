@@ -37,4 +37,16 @@ export default class ClientRepositoryMongo implements ClientRepository {
           );
           return ClientMapper.toDomain(clientUpdated);
     }
+
+    public async partialUpdateClient(clientId: string, client: Client): Promise<Optional<Client>> {
+        const currentClient = await this.clientModel.findById(clientId);
+        currentClient.taxId = client.taxId;
+        currentClient.typeCurrency = client.typeCurrency;
+        const clientUpdated = await this.clientModel.findByIdAndUpdate(
+            clientId,
+            currentClient,
+            { new: true },
+          );
+          return ClientMapper.toDomain(clientUpdated);
+    }
 }

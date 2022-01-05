@@ -1,21 +1,7 @@
 import Invoice from "src/domain/invoice";
 import { Optional } from "typescript-optional";
 import InvoiceEntity from "../adapters/entity/invoice.entity";
-/*
-
-      id: string,
-      vendorId: number,
-      invoiceNumber: string,
-      invoiceDate: string,
-      invoiceTotal: number,
-      paymentTotal: number,
-      creditTotal: number,
-      bankId: number,
-      invoiceDueDate: string,
-      paymentDate: string,
-      currency: string
-
-*/ 
+ 
 export default class InvoiceMapper {
     public static toDomain(invoiceEntity: InvoiceEntity): Optional<Invoice> {
       if (!invoiceEntity) {
