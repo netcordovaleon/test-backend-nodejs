@@ -1,11 +1,11 @@
 export default class Client {
   
     public id?: string;
-    public companyName: string;
-    public internalId: string;
-    public taxId: string;
-    public typeCurrency: string;
-    public montlyFee: number;
+    public companyName?: string;
+    public internalId?: string;
+    public taxId?: string;
+    public typeCurrency?: string;
+    public montlyFee?: number;
   
     constructor(
       id: string,
