@@ -24,6 +24,40 @@
 
 ## Description
 
+## Arquitectura
+
+La arquitectura de esta aplicación es una architectura hexagonal, para encontrar detalle de la comunicación de los componentes se muestra la siguiente imagen:
+
+Herramientas y librerias utilizadas:
+
+- NestJS
+- Mongoose
+- NestJS/Mongoose
+- Csv-Parse
+
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://github.com/netcordovaleon/test-backend-nodejs/blob/develop/docs/architecture.png?raw=true" width="320" alt="Arquitectura" /></a>
+</p>
+
+ La solución de la aplicación en un MVP para la empresa VANK, podra encontrar diferentes API's como:
+
+ ```bash
+# CREAR UN NUEVO CLIENTE
+$ (POST) /client => (body: request)
+# ACTUALIZAR UN CLIENTE
+$ (PATCH) /client => (head: id, body: request)
+
+# BUSCAR TODOS INVOICES
+$ (POST) /invoice => (body: request)
+# BUSCAR INVOICES POR FILTRO
+$ (PATCH) /invoice/filter?vendor={vendor}&dateIni={dateIni}&dateFin={dateFin} => (queryparam: request)
+# GRABAR CSV HACIA BASE NOSQL
+$ (POST) /invoice/bulk => ()
+
+```
+
+
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
@@ -38,19 +72,6 @@ $ npm install
 # Correr aplicación
 $ npm run start
 
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support

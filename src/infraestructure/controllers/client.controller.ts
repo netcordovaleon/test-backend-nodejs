@@ -6,6 +6,7 @@ import {
     HttpStatus,
     Body,
     Put,
+    Patch,
   } from '@nestjs/common';
 import ClientCommand from 'src/application/command/client.command';
 import CreateClientUseCase from 'src/application/usecase/createClient.usecase';
@@ -28,7 +29,7 @@ export default class ClientController {
       return request.status(HttpStatus.CREATED).json(clientCreated);
     }
 
-    @Put()
+    @Patch()
     public async updateClient(
       @Res() request,
       @Body() client: ClientCommand,

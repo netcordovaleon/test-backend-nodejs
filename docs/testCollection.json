@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "a69ead3f-335c-4977-a630-852cd9603432",
+		"name": "Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BulkInvoice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/invoice/bulk",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoice",
+						"bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllInvoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/invoice",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InvoiceFilter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/invoice/filter?vendor=1&dateIni=02/25/2014&dateFin=13/26/2014",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoice",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "vendor",
+							"value": "1"
+						},
+						{
+							"key": "dateIni",
+							"value": "02/25/2014"
+						},
+						{
+							"key": "dateFin",
+							"value": "13/26/2014"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartialUpdateClient",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taxId\": \"Tax  2\",\r\n    \"typeCurrency\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/client?id=61d6342633944b1905ff31da",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"client"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61d6342633944b1905ff31da"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"hola 12\",\r\n    \"internalId\": \"010101\",\r\n    \"taxId\": \"Tax updated\",\r\n    \"typeCurrency\": \"SOL\",\r\n    \"montlyFee\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/client",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
