@@ -44,6 +44,82 @@ La Aplicación es el núcleo del sistema, contiene los Servicios de la Aplicaci�
 ## Shared 
 Archivos compartidos, funciones y utilitarios para toda la aplicación
 
+# Proyecto
+
+## URL publica
+
+https://lacl-test-backend-api.herokuapp.com/
+
+## DockerFile:
+
+ ```docker
+
+FROM node:12.19.0-alpine3.9 AS builder
+WORKDIR /app
+COPY ./package.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+
+FROM node:12.19.0-alpine3.9
+WORKDIR /app
+COPY --from=builder /app ./
+CMD ["npm", "run", "start"]
+
+```
+
+## YAML for Heroku CI / CD
+
+Variables guadadas en Github Secrets:
+
+- secrets.HEROKU_EMAIL
+- secrets.HEROKU_APP_NAME 
+- secrets.HEROKU_APP_NAME
+
+ ```yaml
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+# Your workflows jobs.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out your repository.
+      - name: Checkout
+        uses: actions/checkout@v2
+
+
+      # Build
+
+      - name: Build and Deploy. 
+        uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+        with:
+
+          email: ${{ secrets.HEROKU_EMAIL }}
+          
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+
+          dockerfile_directory: ./
+
+          dockerfile_name: Dockerfile
+
+          docker_options: "--no-cache"
+
+          process_type: web
+
+
+```
+
+
 Herramientas y librerias utilizadas:
 
 - NestJS
@@ -76,7 +152,7 @@ Para ejecutar las pruebas en POSTMAN, se comparte la siguiente collection:
  ```bash
 POSTMAN: Collection v2.1 
 ```
-- Archivo de pruebas - [Descargar postman collection](https://github.com/netcordovaleon/test-backend-nodejs/blob/develop/docs/testCollection.json)
+- Archivo de pruebas - [Descargar postman collection](https://github.com/netcordovaleon/test-backend-nodejs/blob/master/docs/testCollection.json)
 
 
 

@@ -11,11 +11,13 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/invoice/bulk",
+					"raw": "https://lacl-test-backend-api.herokuapp.com/invoice/bulk",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"lacl-test-backend-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"invoice",
 						"bulk"
@@ -30,11 +32,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/invoice",
+					"raw": "https://lacl-test-backend-api.herokuapp.com/invoice",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"lacl-test-backend-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"invoice"
 					]
@@ -48,27 +52,25 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/invoice/filter?vendor=1&dateIni=02/25/2014&dateFin=13/26/2014",
+					"raw": "https://lacl-test-backend-api.herokuapp.com/invoice/filter?dateIni=02/25/2014&dateFin=02/26/2014",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"lacl-test-backend-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"invoice",
 						"filter"
 					],
 					"query": [
 						{
-							"key": "vendor",
-							"value": "1"
-						},
-						{
 							"key": "dateIni",
 							"value": "02/25/2014"
 						},
 						{
 							"key": "dateFin",
-							"value": "13/26/2014"
+							"value": "02/26/2014"
 						}
 					]
 				}
@@ -90,11 +92,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/client?id=61d6342633944b1905ff31da",
+					"raw": "https://lacl-test-backend-api.herokuapp.com/client?id=61d6342633944b1905ff31da",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"lacl-test-backend-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"client"
 					],
@@ -123,11 +127,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/client",
+					"raw": "https://lacl-test-backend-api.herokuapp.com/client",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"lacl-test-backend-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"client"
 					]

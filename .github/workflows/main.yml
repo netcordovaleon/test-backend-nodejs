@@ -17,7 +17,7 @@ jobs:
 
       # Build
 
-      - name: Build and Deploy. # Your custom step name
+      - name: Build and Deploy. 
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:
 
@@ -33,8 +33,4 @@ jobs:
 
           docker_options: "--no-cache"
 
-          # (Optional, default: "web")
-          # Select the process type for which you want the docker container to be uploaded.
-          # By default, this argument is set to "web".
-          # For more information look at https://devcenter.heroku.com/articles/process-model
           process_type: web
