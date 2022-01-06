@@ -53,9 +53,14 @@ $ (POST) /invoice => (body: request)
 $ (PATCH) /invoice/filter?vendor={vendor}&dateIni={dateIni}&dateFin={dateFin} => (queryparam: request)
 # GRABAR CSV HACIA BASE NOSQL
 $ (POST) /invoice/bulk => ()
-
 ```
 
+Para ejecutar las pruebas en POSTMAN, se comparte la siguiente collection:
+
+ ```bash
+POSTMAN: Collection v2.1 
+```
+- Archivo de pruebas - [Descargar postman collection](https://github.com/netcordovaleon/test-backend-nodejs/blob/develop/docs/testCollection.json)
 
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
