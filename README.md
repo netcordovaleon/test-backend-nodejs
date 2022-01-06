@@ -28,6 +28,22 @@
 
 La arquitectura de esta aplicación es una architectura hexagonal, para encontrar detalle de la comunicación de los componentes se muestra la siguiente imagen:
 
+
+## Dominio
+
+Un modelo domain es un modelo conceptual, una representación de conceptos significativos para el domain que han de ser modelados en el software. Los conceptos incluyen la información envuelta en el negocio y dirige los usos de negocio en relación a esa información.
+
+## Ports
+
+Los puertos son interfaces que permiten el flujo entrante y saliente. Por lo tanto, la parte central de la aplicación se comunica con la parte exterior mediante los puertos dedicados.
+
+## Application
+
+La Aplicación es el núcleo del sistema, contiene los Servicios de la Aplicación que organizan la funcionalidad o los casos de uso. También contiene el modelo de dominio, que es la lógica empresarial incorporada en agregados, entidades y objetos de valor. La aplicación está representada por un hexágono que recibe comandos o consultas de los puertos y envía solicitudes a otros actores externos, como bases de datos, también a través de puertos.
+
+## Shared 
+Archivos compartidos, funciones y utilitarios para toda la aplicación
+
 Herramientas y librerias utilizadas:
 
 - NestJS
@@ -61,6 +77,7 @@ Para ejecutar las pruebas en POSTMAN, se comparte la siguiente collection:
 POSTMAN: Collection v2.1 
 ```
 - Archivo de pruebas - [Descargar postman collection](https://github.com/netcordovaleon/test-backend-nodejs/blob/develop/docs/testCollection.json)
+
 
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
